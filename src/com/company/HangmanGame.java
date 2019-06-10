@@ -139,9 +139,14 @@ public class HangmanGame {
             if(currentState == hangman.currentState)
                 System.out.println("Hey u got a letter nice!");
 
-            if(hangman.getWord().equalsIgnoreCase(secretWord)){
+            String secret = hangman.getWord().replace(" ", "");
+            if(secret.equalsIgnoreCase(secretWord)){
                 System.out.println("Hey you won this round here is a point for u :)");
-                return 1;
+                int score = 0;
+                score++;
+                if(hangman.currentState == 0)
+                    score++;
+                return score;
             }
 
 
@@ -202,7 +207,13 @@ public class HangmanGame {
         @Override
         public void run() {
             playSound(fileName);
-            start();
+            playSound(fileName);
+            playSound(fileName);
+            playSound(fileName);
+            playSound(fileName);
+            playSound(fileName);
+            playSound(fileName);
+            playSound(fileName);
         }
 
         private final int BUFFER_SIZE = 128000;
